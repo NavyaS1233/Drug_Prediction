@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta  name="viewport" content="width=device-width",initial-scale="1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+    <title>Drug Prediction Input</title>
+</head>
+<body>
+<div class ='container'>
+    <h1>Input your details</h1>
+    <form action="{{ url_for('result') }}" method="POST">
+        <label for="sex">Sex:</label>
+        <select name="sex" id="sex">
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+        </select>
+
+
+        <label for="bp">Blood Pressure</label>
+        <select name="bp" id="bp">
+        <option value="HIGH">High</option>
+        <option value="NORMAL">Normal</option>
+        <option value="LOW">Low</option>
+        </select>
+
+
+        <label for="cholesterol">Cholesterol:</label>
+            <select name="cholesterol" id="cholesterol">
+                <option value="HIGH">High</option>
+                <option value="NORMAL">Normal</option>
+            </select>
+
+            <label for="age_binned">Age:</label>
+            <select name="age_binned" id="age_binned">
+                <option value="<20s">Below 20</option>
+                <option value="20s">20-29</option>
+                <option value="30s">30-39</option>
+                <option value="40s">40-49</option>
+                <option value="50s">50-59</option>
+                <option value="60s">60-69</option>
+                <option value=">60s">Above 69</option>
+            </select>
+
+            <label for="na_to_k_binned">Na to K:</label>
+            <select name="na_to_k_binned" id="na_to_k_binned">
+                <option value="<10">Below 10</option>
+                <option value="10-20">10-20</option>
+                <option value="20-30">20-30</option>
+                <option value=">30">Above 30</option>
+            </select>
+
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>
